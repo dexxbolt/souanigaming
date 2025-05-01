@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ShoppingCart, Menu, X, Search, User } from 'lucide-react';
+import { ShoppingCart, Menu, X, Search, User, Headphones, Settings, PanelRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 
@@ -21,10 +21,10 @@ const Navbar: React.FC = () => {
           <nav className="hidden md:flex items-center space-x-6">
             <Link to="/" className="nav-link font-medium">Home</Link>
             <Link to="/products" className="nav-link font-medium">Products</Link>
-            <Link to="/category/keyboards" className="nav-link font-medium">Keyboards</Link>
-            <Link to="/category/mice" className="nav-link font-medium">Mice</Link>
-            <Link to="/category/headsets" className="nav-link font-medium">Headsets</Link>
-            <Link to="/category/chairs" className="nav-link font-medium">Chairs</Link>
+            <Link to="/repair-services" className="nav-link font-medium">Repair Services</Link>
+            <Link to="/custom-builds" className="nav-link font-medium">Custom Builds</Link>
+            <Link to="/how-to-order" className="nav-link font-medium">How To Order</Link>
+            <Link to="/reviews" className="nav-link font-medium">Reviews</Link>
             <Link to="/contact" className="nav-link font-medium">Contact</Link>
           </nav>
 
@@ -61,10 +61,10 @@ const Navbar: React.FC = () => {
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
             <Link to="/" className="nav-link font-medium">Home</Link>
             <Link to="/products" className="nav-link font-medium">Products</Link>
-            <Link to="/category/keyboards" className="nav-link font-medium">Keyboards</Link>
-            <Link to="/category/mice" className="nav-link font-medium">Mice</Link>
-            <Link to="/category/headsets" className="nav-link font-medium">Headsets</Link>
-            <Link to="/category/chairs" className="nav-link font-medium">Chairs</Link>
+            <Link to="/repair-services" className="nav-link font-medium">Repair Services</Link>
+            <Link to="/custom-builds" className="nav-link font-medium">Custom Builds</Link>
+            <Link to="/how-to-order" className="nav-link font-medium">How To Order</Link>
+            <Link to="/reviews" className="nav-link font-medium">Reviews</Link>
             <Link to="/contact" className="nav-link font-medium">Contact</Link>
             <hr className="border-mustang-gray" />
             <div className="flex items-center space-x-6">

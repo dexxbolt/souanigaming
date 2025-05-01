@@ -9,8 +9,10 @@ import {
   CreditCard,
   Mail,
   Phone,
-  MapPin
+  MapPin,
+  Clock
 } from 'lucide-react';
+import WhatsAppButton from './WhatsAppButton';
 
 const Footer: React.FC = () => {
   return (
@@ -25,7 +27,7 @@ const Footer: React.FC = () => {
               <span className="text-mustang-red text-2xl font-bold">GAMING</span>
             </Link>
             <p className="text-gray-400 mb-6">
-              Premium gaming peripherals and accessories for professional gamers and enthusiasts.
+              Morocco's trusted tech supplier. Premium gaming peripherals and accessories for professional gamers and enthusiasts.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-mustang-red" aria-label="Facebook">
@@ -54,38 +56,44 @@ const Footer: React.FC = () => {
                 <Link to="/products" className="text-gray-400 hover:text-mustang-red">Products</Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-400 hover:text-mustang-red">About Us</Link>
+                <Link to="/repair-services" className="text-gray-400 hover:text-mustang-red">Repair Services</Link>
+              </li>
+              <li>
+                <Link to="/custom-builds" className="text-gray-400 hover:text-mustang-red">Custom Builds</Link>
+              </li>
+              <li>
+                <Link to="/how-to-order" className="text-gray-400 hover:text-mustang-red">How to Order</Link>
+              </li>
+              <li>
+                <Link to="/reviews" className="text-gray-400 hover:text-mustang-red">Reviews</Link>
               </li>
               <li>
                 <Link to="/contact" className="text-gray-400 hover:text-mustang-red">Contact</Link>
               </li>
               <li>
-                <Link to="/blog" className="text-gray-400 hover:text-mustang-red">Blog</Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-gray-400 hover:text-mustang-red">FAQ</Link>
+                <Link to="/terms" className="text-gray-400 hover:text-mustang-red">Terms & Policies</Link>
               </li>
             </ul>
           </div>
           
-          {/* Categories */}
+          {/* Business Hours */}
           <div>
-            <h3 className="text-lg font-bold mb-4 uppercase">Categories</h3>
+            <h3 className="text-lg font-bold mb-4 uppercase">Business Hours</h3>
             <ul className="space-y-2">
-              <li>
-                <Link to="/category/keyboards" className="text-gray-400 hover:text-mustang-red">Keyboards</Link>
+              <li className="flex items-center text-gray-400">
+                <Clock size={16} className="mr-2 text-mustang-red" />
+                <span>Monday - Friday: 9AM - 7PM</span>
               </li>
-              <li>
-                <Link to="/category/mice" className="text-gray-400 hover:text-mustang-red">Mice</Link>
+              <li className="flex items-center text-gray-400">
+                <Clock size={16} className="mr-2 text-mustang-red" />
+                <span>Saturday: 10AM - 6PM</span>
               </li>
-              <li>
-                <Link to="/category/headsets" className="text-gray-400 hover:text-mustang-red">Headsets</Link>
+              <li className="flex items-center text-gray-400">
+                <Clock size={16} className="mr-2 text-mustang-red" />
+                <span>Sunday: Closed</span>
               </li>
-              <li>
-                <Link to="/category/chairs" className="text-gray-400 hover:text-mustang-red">Chairs</Link>
-              </li>
-              <li>
-                <Link to="/category/accessories" className="text-gray-400 hover:text-mustang-red">Accessories</Link>
+              <li className="mt-4">
+                <WhatsAppButton label="Chat on WhatsApp" message="Hi, I'd like to know more about your products." />
               </li>
             </ul>
           </div>
