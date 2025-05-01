@@ -1,7 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { useParams, Navigate } from 'react-router-dom';
-import { useWhatsApp } from '../context/WhatsAppContext';
+import { useParams } from 'react-router-dom';
 import { Loader } from "lucide-react";
 
 const OrderConfirmation: React.FC = () => {
@@ -9,8 +8,16 @@ const OrderConfirmation: React.FC = () => {
   const decodedProductName = productName ? decodeURIComponent(productName) : "the product";
 
   useEffect(() => {
-    // This component is just a transition page before redirecting to WhatsApp
-    // The actual redirect happens in the WhatsAppContext
+    // Retrieve the stored WhatsApp URL and redirect after a delay
+    const whatsappRedirect = sessionStorage.getItem('whatsappRedirect');
+    if (whatsappRedirect) {
+      const redirectTimer = setTimeout(() => {
+        window.location.href = whatsappRedirect;
+        sessionStorage.removeItem('whatsappRedirect'); // Clean up after redirect
+      }, 2000);
+      
+      return () => clearTimeout(redirectTimer);
+    }
   }, []);
 
   return (
