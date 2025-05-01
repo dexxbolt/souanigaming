@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <h1 className="text-2xl font-bold text-white mr-2">MUSTANG</h1>
+            <h1 className="text-2xl font-bold text-white mr-2">SOUANI</h1>
             <span className="text-mustang-red text-2xl font-bold">GAMING</span>
           </Link>
 
@@ -24,7 +24,6 @@ const Navbar: React.FC = () => {
             <Link to="/repair-services" className="nav-link font-medium">Repair Services</Link>
             <Link to="/custom-builds" className="nav-link font-medium">Custom Builds</Link>
             <Link to="/how-to-order" className="nav-link font-medium">How To Order</Link>
-            <Link to="/reviews" className="nav-link font-medium">Reviews</Link>
             <Link to="/contact" className="nav-link font-medium">Contact</Link>
           </nav>
 
@@ -33,9 +32,6 @@ const Navbar: React.FC = () => {
             <button className="text-white hover:text-mustang-red" aria-label="Search">
               <Search size={20} />
             </button>
-            <Link to="/account" className="text-white hover:text-mustang-red" aria-label="Account">
-              <User size={20} />
-            </Link>
             <Link to="/cart" className="text-white hover:text-mustang-red relative" aria-label="Cart">
               <ShoppingCart size={20} />
               <span className="absolute -top-2 -right-2 bg-mustang-red text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
@@ -64,16 +60,12 @@ const Navbar: React.FC = () => {
             <Link to="/repair-services" className="nav-link font-medium">Repair Services</Link>
             <Link to="/custom-builds" className="nav-link font-medium">Custom Builds</Link>
             <Link to="/how-to-order" className="nav-link font-medium">How To Order</Link>
-            <Link to="/reviews" className="nav-link font-medium">Reviews</Link>
             <Link to="/contact" className="nav-link font-medium">Contact</Link>
             <hr className="border-mustang-gray" />
             <div className="flex items-center space-x-6">
               <button className="text-white hover:text-mustang-red" aria-label="Search">
                 <Search size={20} />
               </button>
-              <Link to="/account" className="text-white hover:text-mustang-red" aria-label="Account">
-                <User size={20} />
-              </Link>
               <Link to="/cart" className="text-white hover:text-mustang-red relative" aria-label="Cart">
                 <ShoppingCart size={20} />
                 <span className="absolute -top-2 -right-2 bg-mustang-red text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">

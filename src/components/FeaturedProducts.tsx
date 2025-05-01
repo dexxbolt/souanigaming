@@ -2,25 +2,26 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Star, Award } from 'lucide-react';
+import WhatsAppButton from './WhatsAppButton';
 
 const products = [
   {
     id: 1,
-    name: "Monster Keyboard RGB",
-    price: 129.99,
-    originalPrice: 149.99,
+    name: "Souani Pro Keyboard RGB",
+    price: 1299,
+    originalPrice: 1499,
     image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1480&auto=format&fit=crop",
     category: "Keyboards",
     rating: 4.8,
     reviewCount: 124,
-    path: "/product/monster-keyboard-rgb"
+    path: "/product/souani-pro-keyboard-rgb"
   },
   {
     id: 2,
-    name: "Raptor Gaming Mouse",
-    price: 79.99,
-    originalPrice: 99.99,
+    name: "Zephyr Gaming Mouse",
+    price: 799,
+    originalPrice: 999,
     image: "https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=1528&auto=format&fit=crop",
     category: "Mice",
     rating: 4.9,
@@ -29,9 +30,9 @@ const products = [
   },
   {
     id: 3,
-    name: "Thunder X7 Headset",
-    price: 149.99,
-    originalPrice: 179.99,
+    name: "Sonic Beast Headset",
+    price: 1499,
+    originalPrice: 1799,
     image: "https://images.unsplash.com/photo-1599669454699-248893623440?q=80&w=1470&auto=format&fit=crop",
     category: "Headsets",
     rating: 4.7,
@@ -40,9 +41,9 @@ const products = [
   },
   {
     id: 4,
-    name: "Cobra Gaming Chair",
-    price: 299.99,
-    originalPrice: 349.99,
+    name: "Supreme Gaming Chair",
+    price: 2999,
+    originalPrice: 3499,
     image: "https://images.unsplash.com/photo-1616626298060-8d071eb359f6?q=80&w=1470&auto=format&fit=crop",
     category: "Chairs",
     rating: 4.6,
@@ -56,7 +57,10 @@ const FeaturedProducts: React.FC = () => {
     <section className="py-16 bg-mustang-dark">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="section-title">FEATURED PRODUCTS</h2>
+          <div className="flex items-center gap-2">
+            <Award className="text-mustang-red" />
+            <h2 className="section-title">FEATURED PRODUCTS</h2>
+          </div>
           <Link to="/products" className="text-mustang-red hover:underline">
             View All
           </Link>
@@ -64,7 +68,7 @@ const FeaturedProducts: React.FC = () => {
         
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {products.map((product) => (
-            <div key={product.id} className="product-card">
+            <div key={product.id} className="product-card bg-mustang-gray rounded-lg overflow-hidden transition-transform hover:scale-105 duration-300">
               <Link to={product.path} className="block relative group">
                 <div className="aspect-square overflow-hidden">
                   <img 
@@ -88,22 +92,26 @@ const FeaturedProducts: React.FC = () => {
                     </h3>
                   </div>
                   <div className="flex items-center">
-                    <span className="text-mustang-red">★</span>
+                    <Star className="h-4 w-4 fill-mustang-red text-mustang-red" />
                     <span className="text-white ml-1">{product.rating}</span>
                   </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div>
-                    <span className="text-mustang-red font-bold text-lg">${product.price}</span>
+                    <span className="text-mustang-red font-bold text-lg">{product.price} MAD</span>
                     {product.originalPrice > product.price && (
                       <span className="text-gray-400 text-sm line-through ml-2">
-                        ${product.originalPrice}
+                        {product.originalPrice} MAD
                       </span>
                     )}
                   </div>
-                  <Button variant="outline" size="icon" className="border-mustang-red hover:bg-mustang-red hover:text-white">
-                    <ShoppingCart size={16} />
-                  </Button>
+                  <WhatsAppButton
+                    label=""
+                    message={`Hi, I'm interested in the ${product.name} for ${product.price} MAD. Is it available?`}
+                    productName={product.name}
+                    className="p-2"
+                    iconOnly={true}
+                  />
                 </div>
               </div>
             </div>

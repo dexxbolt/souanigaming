@@ -8,9 +8,10 @@ import Banner from '../components/Banner';
 import Brands from '../components/Brands';
 import Footer from '../components/Footer';
 import QuickCategories from '../components/QuickCategories';
-import CustomerReviews from '../components/CustomerReviews';
 import CTABlock from '../components/CTABlock';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
+import NewArrivals from '../components/NewArrivals';
+import SpecialOffers from '../components/SpecialOffers';
 
 const Index = () => {
   return (
@@ -20,8 +21,9 @@ const Index = () => {
       <QuickCategories />
       <WhyShopWithUs />
       <FeaturedProducts />
+      <NewArrivals />
       <Banner />
-      <CustomerReviews />
+      <SpecialOffers />
       <CTABlock />
       <Brands />
       <Footer />

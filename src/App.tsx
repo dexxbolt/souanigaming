@@ -11,7 +11,6 @@ import RepairServices from "./pages/RepairServices";
 import HowToOrder from "./pages/HowToOrder";
 import Contact from "./pages/Contact";
 import OrderConfirmation from "./pages/OrderConfirmation";
-import Reviews from "./pages/Reviews";
 import CustomBuilds from "./pages/CustomBuilds";
 import Terms from "./pages/Terms";
 import WhatsAppProvider from "./context/WhatsAppContext";
@@ -32,7 +31,6 @@ const App = () => (
             <Route path="/how-to-order" element={<HowToOrder />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/order-confirmation/:productName?" element={<OrderConfirmation />} />
-            <Route path="/reviews" element={<Reviews />} />
             <Route path="/custom-builds" element={<CustomBuilds />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />

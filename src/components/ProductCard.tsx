@@ -13,7 +13,9 @@ interface Product {
   brand: string;
   specs: string[];
   inStock: boolean;
-  isNew: boolean;
+  isNew?: boolean;
+  isPopular?: boolean;
+  discount?: number;
 }
 
 interface ProductCardProps {
@@ -22,16 +24,26 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
-    <Card className="bg-mustang-gray border-none overflow-hidden product-card">
+    <Card className="bg-mustang-gray border-none overflow-hidden product-card hover:shadow-lg transition-shadow duration-300">
       <div className="relative">
         <img 
           src={product.image} 
           alt={product.name} 
-          className="w-full h-48 object-cover"
+          className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
         />
         {product.isNew && (
-          <Badge className="absolute top-2 left-2 bg-mustang-red text-white">
+          <Badge className="absolute top-2 left-2 bg-green-500 text-white">
             New In
+          </Badge>
+        )}
+        {product.isPopular && (
+          <Badge className="absolute top-2 left-2 bg-amber-500 text-white">
+            Popular
+          </Badge>
+        )}
+        {product.discount && (
+          <Badge className="absolute top-2 right-2 bg-mustang-red text-white">
+            {product.discount}% Off
           </Badge>
         )}
         {!product.inStock && (
@@ -49,7 +61,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             <li key={index} className="mb-1">• {spec}</li>
           ))}
         </ul>
-        <p className="text-mustang-red text-xl font-bold">{product.price} MAD</p>
+        <div className="flex items-center">
+          <p className="text-mustang-red text-xl font-bold">{product.price} MAD</p>
+          {product.discount && (
+            <p className="text-gray-400 line-through ml-2 text-sm">
+              {Math.round(product.price / (1 - product.discount / 100))} MAD
+            </p>
+          )}
+        </div>
       </CardContent>
       
       <CardFooter className="p-4 pt-0">
