@@ -1,3 +1,4 @@
+
 import React, { createContext, useContext } from 'react';
 
 type WhatsAppContextType = {
@@ -16,7 +17,7 @@ export const useWhatsApp = () => {
 };
 
 const WhatsAppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const whatsappNumber = '+212600000000'; // Replace with your actual WhatsApp number
+  const whatsappNumber = '+212625016559'; // Updated WhatsApp number
   
   const sendWhatsAppMessage = (message: string, productName?: string) => {
     const encodedMessage = encodeURIComponent(message);

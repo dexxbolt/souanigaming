@@ -49,6 +49,50 @@ const products = [
     rating: 4.6,
     reviewCount: 42,
     path: "/product/cobra-gaming-chair"
+  },
+  {
+    id: 5,
+    name: "EVGA RTX 4080 Super",
+    price: 12999,
+    originalPrice: 13999,
+    image: "https://images.unsplash.com/photo-1587431572088-a93c694aaecc?q=80&w=1438&auto=format&fit=crop",
+    category: "GPUs",
+    rating: 4.9,
+    reviewCount: 28,
+    path: "/product/evga-rtx-4080-super"
+  },
+  {
+    id: 6,
+    name: "Samsung Odyssey G7",
+    price: 4999,
+    originalPrice: 5499,
+    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1674&auto=format&fit=crop",
+    category: "Monitors",
+    rating: 4.8,
+    reviewCount: 62,
+    path: "/product/samsung-odyssey-g7"
+  },
+  {
+    id: 7,
+    name: "Razer Huntsman Elite",
+    price: 1899,
+    originalPrice: 2099,
+    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1480&auto=format&fit=crop",
+    category: "Keyboards",
+    rating: 4.7,
+    reviewCount: 94,
+    path: "/product/razer-huntsman-elite"
+  },
+  {
+    id: 8,
+    name: "NZXT Kraken X73 RGB",
+    price: 2499,
+    originalPrice: 2799,
+    image: "https://images.unsplash.com/photo-1587202372255-21c7845ece37?q=80&w=1470&auto=format&fit=crop",
+    category: "Cooling",
+    rating: 4.6,
+    reviewCount: 37,
+    path: "/product/nzxt-kraken-x73-rgb"
   }
 ];
 
@@ -66,7 +110,7 @@ const FeaturedProducts: React.FC = () => {
           </Link>
         </div>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="product-card bg-mustang-gray rounded-lg overflow-hidden transition-transform hover:scale-105 duration-300">
               <Link to={product.path} className="block relative group">

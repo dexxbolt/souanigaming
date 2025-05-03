@@ -14,7 +14,7 @@ export interface Product {
   originalPrice?: number;
 }
 
-// Expanded product data
+// Expanded product data with new products
 export const products: Product[] = [
   {
     id: 1,
@@ -149,7 +149,6 @@ export const products: Product[] = [
     inStock: true,
     isNew: true
   },
-  // Adding more products
   {
     id: 13,
     name: "Cooler Master Hyper 212",
@@ -239,8 +238,121 @@ export const products: Product[] = [
     specs: ["AMD B550", "Mini-ITX", "Wi-Fi"],
     inStock: true,
     isNew: false
+  },
+  // New products added
+  {
+    id: 21,
+    name: "Logitech G502 Hero Mouse",
+    image: "https://images.unsplash.com/photo-1605773527852-c546a8584ea3?q=80&w=1374&auto=format&fit=crop",
+    price: 799,
+    category: "mice",
+    brand: "Logitech",
+    specs: ["25K DPI Sensor", "11 Programmable Buttons", "Adjustable Weights"],
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: 22,
+    name: "Corsair Vengeance RGB Pro 32GB",
+    image: "https://images.unsplash.com/photo-1592864431314-20c74e92fab7?q=80&w=1470&auto=format&fit=crop",
+    price: 1499,
+    category: "storage",
+    brand: "Corsair",
+    specs: ["32GB (2x16GB)", "3600MHz", "RGB Lighting"],
+    inStock: true,
+    isPopular: true
+  },
+  {
+    id: 23,
+    name: "Samsung Odyssey G7 Monitor",
+    image: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?q=80&w=1674&auto=format&fit=crop",
+    price: 4999,
+    originalPrice: 5499,
+    category: "monitors",
+    brand: "Samsung",
+    specs: ["32\" Curved", "240Hz", "1ms Response Time", "QLED"],
+    inStock: true,
+    discount: 10
+  },
+  {
+    id: 24,
+    name: "Fractal Design Meshify C",
+    image: "https://images.unsplash.com/photo-1587202372683-35c7a8280c0b?q=80&w=1470&auto=format&fit=crop",
+    price: 899,
+    category: "cases",
+    brand: "Fractal Design",
+    specs: ["Mid Tower", "Tempered Glass", "High Airflow"],
+    inStock: true,
+    isNew: false
+  },
+  {
+    id: 25,
+    name: "ROG Strix Z690-E Gaming",
+    image: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?q=80&w=1470&auto=format&fit=crop",
+    price: 3999,
+    category: "motherboards",
+    brand: "ASUS",
+    specs: ["Intel Z690", "DDR5", "PCIe 5.0", "WiFi 6E"],
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: 26,
+    name: "Crucial P5 Plus 2TB SSD",
+    image: "https://images.unsplash.com/photo-1597338770339-2e2b74a92c70?q=80&w=1632&auto=format&fit=crop",
+    price: 2799,
+    originalPrice: 2999,
+    category: "storage",
+    brand: "Crucial",
+    specs: ["PCIe 4.0", "6600MB/s Read", "NVMe"],
+    inStock: true,
+    discount: 8
+  },
+  {
+    id: 27,
+    name: "NZXT Kraken X73 RGB",
+    image: "https://images.unsplash.com/photo-1587202372255-21c7845ece37?q=80&w=1470&auto=format&fit=crop",
+    price: 2499,
+    category: "cooling",
+    brand: "NZXT",
+    specs: ["360mm Radiator", "RGB Infinity Mirror", "CAM Software"],
+    inStock: true,
+    isPopular: true
+  },
+  {
+    id: 28,
+    name: "Razer Huntsman Elite",
+    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1480&auto=format&fit=crop",
+    price: 1899,
+    category: "keyboards",
+    brand: "Razer",
+    specs: ["Optical Switches", "RGB", "Wrist Rest"],
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: 29,
+    name: "SteelSeries Arctis Pro",
+    image: "https://images.unsplash.com/photo-1642790551116-18e150f248d5?q=80&w=1472&auto=format&fit=crop",
+    price: 1999,
+    category: "headsets",
+    brand: "SteelSeries",
+    specs: ["Hi-Res Audio", "RGB", "DTS Headphone:X v2.0"],
+    inStock: false,
+    isPopular: true
+  },
+  {
+    id: 30,
+    name: "EVGA GeForce RTX 4080 Super",
+    image: "https://images.unsplash.com/photo-1587431572088-a93c694aaecc?q=80&w=1438&auto=format&fit=crop",
+    price: 12999,
+    category: "gpus",
+    brand: "EVGA",
+    specs: ["16GB GDDR6X", "256-bit", "23 Gbps", "DLSS 3"],
+    inStock: true,
+    isNew: true
   }
 ];
 
-export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD", "Cooler Master", "SteelSeries", "Glorious", "ViewSonic", "Blue", "Elgato", "EVGA", "ASRock"];
+export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD", "Cooler Master", "SteelSeries", "Glorious", "ViewSonic", "Blue", "Elgato", "EVGA", "ASRock", "Fractal Design", "Crucial"];
 export const categories = ["All", "gpus", "storage", "keyboards", "headsets", "monitors", "processors", "power_supplies", "cases", "cooling", "mice", "accessories", "streaming", "motherboards"];
