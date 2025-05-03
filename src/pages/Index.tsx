@@ -12,6 +12,7 @@ import CTABlock from '../components/CTABlock';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import NewArrivals from '../components/NewArrivals';
 import SpecialOffers from '../components/SpecialOffers';
+import ProductComparison from '../components/ProductComparison';
 
 const Index = () => {
   return (
@@ -22,6 +23,7 @@ const Index = () => {
       <WhyShopWithUs />
       <FeaturedProducts />
       <NewArrivals />
+      <ProductComparison />
       <Banner />
       <SpecialOffers />
       <CTABlock />

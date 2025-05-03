@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import WhatsAppButton from './WhatsAppButton';
@@ -26,35 +27,39 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <Card className="bg-mustang-gray border-none overflow-hidden product-card hover:shadow-lg transition-shadow duration-300">
       <div className="relative">
-        <img 
-          src={product.image} 
-          alt={product.name} 
-          className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
-        />
-        {product.isNew && (
-          <Badge className="absolute top-2 left-2 bg-green-500 text-white">
-            New In
-          </Badge>
-        )}
-        {product.isPopular && (
-          <Badge className="absolute top-2 left-2 bg-amber-500 text-white">
-            Popular
-          </Badge>
-        )}
-        {product.discount && (
-          <Badge className="absolute top-2 right-2 bg-mustang-red text-white">
-            {product.discount}% Off
-          </Badge>
-        )}
-        {!product.inStock && (
-          <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
-            <span className="text-white font-bold text-lg">Out of Stock</span>
-          </div>
-        )}
+        <Link to={`/product/${product.id}`}>
+          <img 
+            src={product.image} 
+            alt={product.name} 
+            className="w-full h-48 object-cover transition-transform duration-500 hover:scale-105"
+          />
+          {product.isNew && (
+            <Badge className="absolute top-2 left-2 bg-green-500 text-white">
+              New In
+            </Badge>
+          )}
+          {product.isPopular && (
+            <Badge className="absolute top-2 left-2 bg-amber-500 text-white">
+              Popular
+            </Badge>
+          )}
+          {product.discount && (
+            <Badge className="absolute top-2 right-2 bg-mustang-red text-white">
+              {product.discount}% Off
+            </Badge>
+          )}
+          {!product.inStock && (
+            <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
+              <span className="text-white font-bold text-lg">Out of Stock</span>
+            </div>
+          )}
+        </Link>
       </div>
       
       <CardContent className="p-4">
-        <h3 className="text-white font-bold text-lg mb-1">{product.name}</h3>
+        <Link to={`/product/${product.id}`}>
+          <h3 className="text-white font-bold text-lg mb-1 hover:text-mustang-red transition-colors">{product.name}</h3>
+        </Link>
         <p className="text-gray-400 text-sm mb-2">{product.brand}</p>
         <ul className="text-gray-300 text-sm mb-3">
           {product.specs.map((spec, index) => (

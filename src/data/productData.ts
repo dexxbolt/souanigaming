@@ -148,8 +148,99 @@ export const products: Product[] = [
     specs: ["12 Cores", "5.6GHz Boost", "AM5 Socket"],
     inStock: true,
     isNew: true
+  },
+  // Adding more products
+  {
+    id: 13,
+    name: "Cooler Master Hyper 212",
+    image: "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?q=80&w=1374&auto=format&fit=crop",
+    price: 349,
+    category: "cooling",
+    brand: "Cooler Master",
+    specs: ["120mm Fan", "Direct Contact", "Universal Socket Support"],
+    inStock: true,
+    isPopular: false
+  },
+  {
+    id: 14,
+    name: "SteelSeries Rival 600",
+    image: "https://images.unsplash.com/photo-1527814050087-3793815479db?q=80&w=1528&auto=format&fit=crop",
+    price: 899,
+    originalPrice: 999,
+    category: "mice",
+    brand: "SteelSeries",
+    specs: ["12,000 DPI", "Dual Optical Sensor", "Weight System"],
+    inStock: true,
+    discount: 10
+  },
+  {
+    id: 15,
+    name: "Glorious Mouse Pad XXL",
+    image: "https://images.unsplash.com/photo-1624705475858-28a6ab052299?q=80&w=1632&auto=format&fit=crop",
+    price: 249,
+    category: "accessories",
+    brand: "Glorious",
+    specs: ["900x400mm", "3mm Thickness", "Cloth Surface"],
+    inStock: true,
+    isNew: false
+  },
+  {
+    id: 16,
+    name: "ViewSonic XG2401 24\" Monitor",
+    image: "https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=1471&auto=format&fit=crop",
+    price: 1999,
+    category: "monitors",
+    brand: "ViewSonic",
+    specs: ["144Hz", "1ms Response Time", "FreeSync"],
+    inStock: true,
+    isPopular: false
+  },
+  {
+    id: 17,
+    name: "Blue Yeti Microphone",
+    image: "https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=1470&auto=format&fit=crop",
+    price: 1299,
+    category: "streaming",
+    brand: "Blue",
+    specs: ["Condenser", "USB", "Multiple Patterns"],
+    inStock: true,
+    isPopular: true
+  },
+  {
+    id: 18,
+    name: "Elgato Stream Deck",
+    image: "https://images.unsplash.com/photo-1588200908342-23b585c03e26?q=80&w=1470&auto=format&fit=crop",
+    price: 1499,
+    category: "streaming",
+    brand: "Elgato",
+    specs: ["15 LCD Keys", "Customizable", "Stream Control"],
+    inStock: false,
+    isNew: true
+  },
+  {
+    id: 19,
+    name: "EVGA SuperNOVA 650 G5",
+    image: "https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=1470&auto=format&fit=crop",
+    price: 999,
+    category: "power_supplies",
+    brand: "EVGA",
+    specs: ["650W", "80+ Gold", "Fully Modular"],
+    inStock: true,
+    discount: 15,
+    originalPrice: 1199
+  },
+  {
+    id: 20,
+    name: "ASRock B550M-ITX/ac",
+    image: "https://images.unsplash.com/photo-1563770660941-10958cec9bc1?q=80&w=1470&auto=format&fit=crop",
+    price: 1299,
+    category: "motherboards",
+    brand: "ASRock",
+    specs: ["AMD B550", "Mini-ITX", "Wi-Fi"],
+    inStock: true,
+    isNew: false
   }
 ];
 
-export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD"];
-export const categories = ["All", "gpus", "storage", "keyboards", "headsets", "monitors", "processors", "power_supplies", "cases"];
+export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD", "Cooler Master", "SteelSeries", "Glorious", "ViewSonic", "Blue", "Elgato", "EVGA", "ASRock"];
+export const categories = ["All", "gpus", "storage", "keyboards", "headsets", "monitors", "processors", "power_supplies", "cases", "cooling", "mice", "accessories", "streaming", "motherboards"];
