@@ -1,8 +1,8 @@
-
 import React, { useState } from 'react';
+import { Card } from './ui/card';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
-import { Search, Package, TruckDelivery, CheckCircle, Calendar } from 'lucide-react';
+import { Search, Package, Truck, CheckCircle, Calendar, MapPin } from 'lucide-react';
 import { Alert, AlertTitle, AlertDescription } from './ui/alert';
 
 const OrderTracking: React.FC = () => {
@@ -90,7 +90,7 @@ const OrderTracking: React.FC = () => {
       case 'processing':
         return <Package className="w-16 h-16 text-yellow-500" />;
       case 'shipped':
-        return <TruckDelivery className="w-16 h-16 text-blue-500" />;
+        return <Truck className="w-16 h-16 text-blue-500" />;
       case 'delivered':
         return <CheckCircle className="w-16 h-16 text-green-500" />;
       default:
@@ -149,7 +149,7 @@ const OrderTracking: React.FC = () => {
                       <span>Order Date: {trackingResult.details?.orderDate}</span>
                     </div>
                     <div className="flex items-center">
-                      <TruckDelivery className="w-4 h-4 mr-2 text-mustang-red" />
+                      <Truck className="w-4 h-4 mr-2 text-mustang-red" />
                       <span>Est. Delivery: {trackingResult.details?.estimatedDelivery}</span>
                     </div>
                     {trackingResult.details?.currentLocation && (

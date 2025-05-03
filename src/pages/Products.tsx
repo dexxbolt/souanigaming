@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -10,6 +9,7 @@ import { products, brands, categories } from '../data/productData';
 import { useProductFilters } from '../hooks/useProductFilters';
 
 const Products: React.FC = () => {
+  
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
   
   const {
