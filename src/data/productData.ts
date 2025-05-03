@@ -6,4 +6,4 @@ import { brands } from './brands';
 import { categories } from './categories';
 
 // Export everything for backwards compatibility
-export { Product, allProducts as products, brands, categories };
+export { type Product, allProducts as products, brands, categories };

@@ -6,39 +6,22 @@ import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { Clock } from 'lucide-react';
 import WhatsAppButton from './WhatsAppButton';
+import { products } from '../data/productData';
 
-const offers = [
-  {
-    id: 1,
-    name: "Summer Gaming Bundle",
-    description: "RTX 3060 + 16GB RAM + 512GB SSD",
-    price: 6499,
-    originalPrice: 7999,
-    discount: 19,
-    image: "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?q=80&w=1374&auto=format&fit=crop",
-    expiresIn: "3 days"
-  },
-  {
-    id: 2,
-    name: "Streamer Setup Deal",
-    description: "Mic + Camera + Ring Light",
-    price: 1999,
-    originalPrice: 2499,
-    discount: 20,
-    image: "https://images.unsplash.com/photo-1589903308904-1010c2294adc?q=80&w=1470&auto=format&fit=crop",
-    expiresIn: "5 days"
-  },
-  {
-    id: 3,
-    name: "Mechanical Keyboard + Mouse",
-    description: "RGB Gaming Combo",
-    price: 999,
-    originalPrice: 1299,
-    discount: 23,
-    image: "https://images.unsplash.com/photo-1618384887929-16ec33fab9ef?q=80&w=1480&auto=format&fit=crop",
-    expiresIn: "Today only"
-  }
-];
+// Filter for products with discounts
+const discountedProducts = products
+  .filter(product => product.discount && product.discount > 0)
+  .slice(0, 3);
+
+// Add expiration dates for special offers
+const offers = discountedProducts.map((product, index) => {
+  const expirationDays = [3, 5, 1]; // Days until offer expires
+  return {
+    ...product,
+    expiresIn: index === 2 ? "Today only" : `${expirationDays[index]} days`,
+    description: product.specs.slice(0, 2).join(", ")
+  };
+});
 
 const SpecialOffers: React.FC = () => {
   return (
@@ -78,7 +61,9 @@ const SpecialOffers: React.FC = () => {
                 <div className="flex items-center justify-between mb-3">
                   <div>
                     <span className="text-mustang-red font-bold text-xl">{offer.price} MAD</span>
-                    <span className="text-gray-400 line-through ml-2">{offer.originalPrice} MAD</span>
+                    {offer.originalPrice && (
+                      <span className="text-gray-400 line-through ml-2">{offer.originalPrice} MAD</span>
+                    )}
                   </div>
                 </div>
                 

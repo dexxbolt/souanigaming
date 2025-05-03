@@ -4,33 +4,12 @@ import { Link } from 'react-router-dom';
 import { Badge } from './ui/badge';
 import WhatsAppButton from './WhatsAppButton';
 import { Card, CardContent, CardFooter } from './ui/card';
+import { products } from '../data/productData';
 
-const newProducts = [
-  {
-    id: 1,
-    name: "ROG Strix Gaming Monitor",
-    price: 3499,
-    image: "https://images.unsplash.com/photo-1588200908342-23b585c03e26?q=80&w=1470&auto=format&fit=crop",
-    specs: ["27\" IPS Panel", "144Hz", "1ms Response Time"],
-    category: "monitors"
-  },
-  {
-    id: 2,
-    name: "Corsair K95 RGB Keyboard",
-    price: 1699,
-    image: "https://images.unsplash.com/photo-1613141411244-0e4ac259d217?q=80&w=1470&auto=format&fit=crop",
-    specs: ["Cherry MX Switches", "Per-key RGB", "Media Controls"],
-    category: "keyboards"
-  },
-  {
-    id: 3,
-    name: "NVIDIA GeForce RTX 4070",
-    price: 7499,
-    image: "https://images.unsplash.com/photo-1591488378430-ef2f4c626b35?q=80&w=1470&auto=format&fit=crop",
-    specs: ["12GB GDDR6X", "DLSS 3.0", "Ray Tracing"],
-    category: "gpus"
-  }
-];
+// Filter for new products
+const newProducts = products
+  .filter(product => product.isNew)
+  .slice(0, 3);
 
 const NewArrivals: React.FC = () => {
   return (
