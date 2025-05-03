@@ -4,7 +4,11 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Search, Send, CheckCircle, Truck, CreditCard } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Search, Send, CheckCircle, Truck, CreditCard, Clock, MapPin, ShoppingBag } from 'lucide-react';
+import WhatsAppButton from '../components/WhatsAppButton';
+import { Alert, AlertTitle, AlertDescription } from '@/components/ui/alert';
+import OrderTracking from '../components/OrderTracking';
 
 const HowToOrder: React.FC = () => {
   const steps = [
@@ -64,6 +68,65 @@ const HowToOrder: React.FC = () => {
     {
       question: "Do you offer installation services?",
       answer: "Yes, we offer installation and setup services for an additional fee. Please inquire about this when placing your order."
+    },
+    {
+      question: "What payment methods do you accept?",
+      answer: "We accept cash on delivery, bank transfers, and mobile payment services like Cash Plus and Inwi Money."
+    },
+    {
+      question: "Can I track my order?",
+      answer: "Yes, once your order is confirmed, you'll receive updates via WhatsApp about your order status and delivery progress."
+    }
+  ];
+
+  const paymentMethods = [
+    {
+      name: "Cash on Delivery",
+      description: "Pay when your order arrives at your doorstep.",
+      icon: <ShoppingBag className="w-12 h-12 text-mustang-red" />
+    },
+    {
+      name: "Bank Transfer",
+      description: "Secure payment via direct bank transfer.",
+      icon: <CreditCard className="w-12 h-12 text-mustang-red" />
+    },
+    {
+      name: "Mobile Payment",
+      description: "Use Cash Plus, Inwi Money or similar services.",
+      icon: <Send className="w-12 h-12 text-mustang-red" />
+    }
+  ];
+
+  const deliveryInformation = [
+    {
+      city: "Tangier",
+      time: "24 hours",
+      fee: "Free"
+    },
+    {
+      city: "Casablanca",
+      time: "48 hours",
+      fee: "30 MAD"
+    },
+    {
+      city: "Rabat",
+      time: "48 hours",
+      fee: "30 MAD"
+    },
+    {
+      city: "Marrakech",
+      time: "48-72 hours",
+      fee: "40 MAD"
+    },
+    {
+      city: "Agadir",
+      time: "72 hours",
+      fee: "50 MAD"
+    },
+    {
+      city: "Other Cities",
+      time: "3-5 days",
+      fee: "Varies"
     }
   ];
 
@@ -77,21 +140,86 @@ const HowToOrder: React.FC = () => {
           Ordering from Mustang Gaming is quick and easy. Follow these simple steps to get your gaming gear delivered to your doorstep.
         </p>
         
-        {/* Order Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-16">
-          {steps.map(step => (
-            <div key={step.id} className="bg-mustang-gray rounded-lg p-6 relative flex flex-col items-center text-center">
-              <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-mustang-red flex items-center justify-center text-white font-bold">
-                {step.id}
-              </div>
-              <div className="mb-4">
-                {step.icon}
-              </div>
-              <h2 className="text-xl font-bold text-white mb-2">{step.title}</h2>
-              <p className="text-gray-300">{step.description}</p>
+        {/* Order Process Tabs */}
+        <Tabs defaultValue="steps" className="mb-16">
+          <TabsList className="grid w-full grid-cols-4 mb-8">
+            <TabsTrigger value="steps">Order Steps</TabsTrigger>
+            <TabsTrigger value="payment">Payment Methods</TabsTrigger>
+            <TabsTrigger value="delivery">Delivery Information</TabsTrigger>
+            <TabsTrigger value="tracking">Order Tracking</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="steps">
+            {/* Order Steps */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
+              {steps.map(step => (
+                <div key={step.id} className="bg-mustang-gray rounded-lg p-6 relative flex flex-col items-center text-center">
+                  <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-mustang-red flex items-center justify-center text-white font-bold">
+                    {step.id}
+                  </div>
+                  <div className="mb-4">
+                    {step.icon}
+                  </div>
+                  <h2 className="text-xl font-bold text-white mb-2">{step.title}</h2>
+                  <p className="text-gray-300">{step.description}</p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </TabsContent>
+          
+          <TabsContent value="payment">
+            {/* Payment Methods */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {paymentMethods.map((method, index) => (
+                <div key={index} className="bg-mustang-gray rounded-lg p-6 flex flex-col items-center text-center">
+                  <div className="mb-4">
+                    {method.icon}
+                  </div>
+                  <h2 className="text-xl font-bold text-white mb-2">{method.name}</h2>
+                  <p className="text-gray-300">{method.description}</p>
+                </div>
+              ))}
+            </div>
+            
+            <Alert className="mt-8 bg-mustang-gray border-mustang-red">
+              <AlertTitle className="text-white">Secure Payments</AlertTitle>
+              <AlertDescription className="text-gray-300">
+                All payment information is handled securely. We never store your payment details.
+              </AlertDescription>
+            </Alert>
+          </TabsContent>
+          
+          <TabsContent value="delivery">
+            {/* Delivery Information */}
+            <div className="bg-mustang-gray rounded-lg p-6">
+              <div className="grid grid-cols-3 text-white font-bold border-b border-mustang-red pb-2 mb-4">
+                <div>City</div>
+                <div>Delivery Time</div>
+                <div>Delivery Fee</div>
+              </div>
+              
+              {deliveryInformation.map((info, index) => (
+                <div key={index} className="grid grid-cols-3 text-gray-300 border-b border-gray-700 py-3">
+                  <div>{info.city}</div>
+                  <div>{info.time}</div>
+                  <div>{info.fee}</div>
+                </div>
+              ))}
+            </div>
+            
+            <Alert className="mt-8 bg-mustang-gray border-mustang-red">
+              <AlertTitle className="text-white">Order Tracking</AlertTitle>
+              <AlertDescription className="text-gray-300">
+                Track your order status via WhatsApp updates. You'll receive notifications at each step of the delivery process.
+              </AlertDescription>
+            </Alert>
+          </TabsContent>
+          
+          <TabsContent value="tracking">
+            {/* Order Tracking */}
+            <OrderTracking />
+          </TabsContent>
+        </Tabs>
         
         {/* FAQ Section */}
         <div className="mb-16">
@@ -125,22 +253,11 @@ const HowToOrder: React.FC = () => {
             >
               Contact Us
             </a>
-            <a 
-              href="https://wa.me/212600000000" 
-              target="_blank" 
-              rel="noopener noreferrer"
+            <WhatsAppButton 
+              label="WhatsApp Us"
+              message="Hi, I have a question about ordering." 
               className="bg-[#25D366] hover:bg-[#128C7E] text-white px-4 py-2 rounded-md transition-colors duration-200 flex items-center"
-            >
-              <svg 
-                xmlns="http://www.w3.org/2000/svg" 
-                className="h-5 w-5 mr-2" 
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-              </svg>
-              WhatsApp Us
-            </a>
+            />
           </div>
         </div>
       </div>

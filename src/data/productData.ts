@@ -1,4 +1,3 @@
-
 export interface Product {
   id: number;
   name: string;
@@ -239,7 +238,6 @@ export const products: Product[] = [
     inStock: true,
     isNew: false
   },
-  // New products added
   {
     id: 21,
     name: "Logitech G502 Hero Mouse",
@@ -351,8 +349,121 @@ export const products: Product[] = [
     specs: ["16GB GDDR6X", "256-bit", "23 Gbps", "DLSS 3"],
     inStock: true,
     isNew: true
+  },
+  {
+    id: 31,
+    name: "Razer Kiyo Pro Webcam",
+    image: "https://images.unsplash.com/photo-1618173745198-42b34701886a?q=80&w=1470&auto=format&fit=crop",
+    price: 1899,
+    category: "streaming",
+    brand: "Razer",
+    specs: ["1080p 60FPS", "Adaptive Light Sensor", "Wide Angle Lens"],
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: 32,
+    name: "AKG K712 Pro Studio Headphones",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1470&auto=format&fit=crop",
+    price: 2499,
+    category: "headsets",
+    brand: "AKG",
+    specs: ["Open-Back Design", "Studio Quality", "Wide Soundstage"],
+    inStock: true,
+    isPopular: false
+  },
+  {
+    id: 33,
+    name: "AMD Ryzen 7 7800X3D",
+    image: "https://images.unsplash.com/photo-1598425237654-4fc758e50a93?q=80&w=1469&auto=format&fit=crop",
+    price: 4999,
+    originalPrice: 5499,
+    category: "processors",
+    brand: "AMD",
+    specs: ["8 Cores / 16 Threads", "5.0GHz Boost", "96MB Cache"],
+    inStock: true,
+    discount: 10
+  },
+  {
+    id: 34,
+    name: "Keychron Q1 Mechanical Keyboard",
+    image: "https://images.unsplash.com/photo-1601445638532-3c6f6c3aa1d6?q=80&w=1472&auto=format&fit=crop",
+    price: 1799,
+    category: "keyboards",
+    brand: "Keychron",
+    specs: ["Hot-swappable", "QMK/VIA Compatible", "Gasket Mount"],
+    inStock: true,
+    isNew: true
+  },
+  {
+    id: 35,
+    name: "Dell Alienware AW3423DW",
+    image: "https://images.unsplash.com/photo-1635768696374-841c66525809?q=80&w=1429&auto=format&fit=crop",
+    price: 12999,
+    originalPrice: 13999,
+    category: "monitors",
+    brand: "Dell",
+    specs: ["34\" QD-OLED", "175Hz", "G-SYNC Ultimate"],
+    inStock: false,
+    discount: 8
+  },
+  {
+    id: 36,
+    name: "Thermaltake Toughpower GF3 850W",
+    image: "https://images.unsplash.com/photo-1558210652-b46d5839a34b?q=80&w=1374&auto=format&fit=crop",
+    price: 1599,
+    category: "power_supplies",
+    brand: "Thermaltake",
+    specs: ["850W", "Fully Modular", "80+ Gold"],
+    inStock: true,
+    isNew: false
+  },
+  {
+    id: 37,
+    name: "Secretlab TITAN Evo 2022",
+    image: "https://images.unsplash.com/photo-1616626298060-8d071eb359f6?q=80&w=1470&auto=format&fit=crop",
+    price: 4299,
+    category: "chairs",
+    brand: "Secretlab",
+    specs: ["Premium Leather", "4D Armrests", "Magnetic Memory Foam"],
+    inStock: true,
+    isPopular: true
+  },
+  {
+    id: 38,
+    name: "Lenovo Legion 5 Pro",
+    image: "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?q=80&w=1632&auto=format&fit=crop",
+    price: 15999,
+    originalPrice: 16999,
+    category: "laptops",
+    brand: "Lenovo",
+    specs: ["RTX 4070", "AMD Ryzen 9", "16\" 240Hz Display"],
+    inStock: true,
+    discount: 6
+  },
+  {
+    id: 39,
+    name: "Creative Sound BlasterX G6",
+    image: "https://images.unsplash.com/photo-1631406920877-057d4767cc10?q=80&w=1470&auto=format&fit=crop",
+    price: 999,
+    category: "audio",
+    brand: "Creative",
+    specs: ["External DAC/Amp", "Virtual 7.1", "Scout Mode"],
+    inStock: true,
+    isNew: false
+  },
+  {
+    id: 40,
+    name: "Lian Li PC-O11 Dynamic",
+    image: "https://images.unsplash.com/photo-1587202372616-b43abea06c2a?q=80&w=1374&auto=format&fit=crop",
+    price: 1499,
+    category: "cases",
+    brand: "Lian Li",
+    specs: ["Mid Tower", "Dual Chamber Design", "Tempered Glass"],
+    inStock: true,
+    isPopular: true
   }
 ];
 
-export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD", "Cooler Master", "SteelSeries", "Glorious", "ViewSonic", "Blue", "Elgato", "EVGA", "ASRock", "Fractal Design", "Crucial"];
-export const categories = ["All", "gpus", "storage", "keyboards", "headsets", "monitors", "processors", "power_supplies", "cases", "cooling", "mice", "accessories", "streaming", "motherboards"];
+export const brands = ["All", "Gigabyte", "Kingston", "Samsung", "Razer", "MSI", "HyperX", "Logitech", "ASUS", "Intel", "Corsair", "NZXT", "AMD", "Cooler Master", "SteelSeries", "Glorious", "ViewSonic", "Blue", "Elgato", "EVGA", "ASRock", "Fractal Design", "Crucial", "Thermaltake", "Secretlab", "Lenovo", "Creative", "Lian Li", "AKG", "Keychron", "Dell"];
+export const categories = ["All", "gpus", "storage", "keyboards", "headsets", "monitors", "processors", "power_supplies", "cases", "cooling", "mice", "accessories", "streaming", "motherboards", "laptops", "chairs", "audio"];

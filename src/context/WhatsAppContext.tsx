@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext } from 'react';
 
 type WhatsAppContextType = {
@@ -17,17 +16,16 @@ export const useWhatsApp = () => {
 };
 
 const WhatsAppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const whatsappNumber = '+212625016559'; // Updated WhatsApp number
+  const whatsappNumber = '+212625016559'; // Moroccan WhatsApp number
   
   const sendWhatsAppMessage = (message: string, productName?: string) => {
     const encodedMessage = encodeURIComponent(message);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
     
     if (productName) {
-      // Instead of using navigate, we'll use window.location directly for navigation
-      // First store the WhatsApp URL to redirect to after confirmation
+      // Store the WhatsApp URL to redirect to after confirmation
       sessionStorage.setItem('whatsappRedirect', whatsappUrl);
-      // Then navigate to the confirmation page
+      // Navigate to the confirmation page
       window.location.href = `/order-confirmation/${encodeURIComponent(productName)}`;
     } else {
       // Otherwise, go directly to WhatsApp

@@ -11,6 +11,7 @@ import CTABlock from '../components/CTABlock';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import NewArrivals from '../components/NewArrivals';
 import SpecialOffers from '../components/SpecialOffers';
+import PopularCategories from '../components/PopularCategories';
 
 const Index = () => {
   return (
@@ -18,6 +19,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <QuickCategories />
+      <PopularCategories />
       <WhyShopWithUs />
       <FeaturedProducts />
       <NewArrivals />

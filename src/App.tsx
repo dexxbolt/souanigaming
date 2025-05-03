@@ -13,7 +13,6 @@ import HowToOrder from "./pages/HowToOrder";
 import Contact from "./pages/Contact";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import CustomBuilds from "./pages/CustomBuilds";
-import Terms from "./pages/Terms";
 import WhatsAppProvider from "./context/WhatsAppContext";
 
 const queryClient = new QueryClient();
@@ -34,7 +33,6 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/order-confirmation/:productName?" element={<OrderConfirmation />} />
             <Route path="/custom-builds" element={<CustomBuilds />} />
-            <Route path="/terms" element={<Terms />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>
