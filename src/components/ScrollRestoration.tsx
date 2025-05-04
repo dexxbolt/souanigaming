@@ -6,39 +6,42 @@ import { useLocation } from 'react-router-dom';
 const scrollPositions = new Map<string, number>();
 
 const ScrollRestoration = () => {
-  const location = useLocation();
-  const path = location.pathname;
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    // Restore scroll position when the component mounts or when the path changes
-    if (scrollPositions.has(path)) {
-      setTimeout(() => {
-        window.scrollTo(0, scrollPositions.get(path) || 0);
-      }, 0);
-    } else {
-      // If it's a new page, scroll to top
-      window.scrollTo(0, 0);
-    }
-
-    // Save the scroll position when unmounting or when path changes
-    return () => {
-      scrollPositions.set(path, window.scrollY);
+    // Restore scroll position or scroll to top
+    const restorePosition = () => {
+      if (scrollPositions.has(pathname)) {
+        window.scrollTo(0, scrollPositions.get(pathname) || 0);
+      } else {
+        window.scrollTo(0, 0);
+      }
     };
-  }, [path]);
 
-  // Save scroll position on scroll events
+    // Use requestAnimationFrame for smoother restoration
+    requestAnimationFrame(() => {
+      restorePosition();
+    });
+
+    // Save scroll position on unmount
+    return () => {
+      scrollPositions.set(pathname, window.scrollY);
+    };
+  }, [pathname]);
+
+  // Use passive event listener for better performance
   useEffect(() => {
     const handleScroll = () => {
-      scrollPositions.set(path, window.scrollY);
+      scrollPositions.set(pathname, window.scrollY);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [path]);
+  }, [pathname]);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default ScrollRestoration;
