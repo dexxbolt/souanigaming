@@ -14,6 +14,7 @@ import Contact from "./pages/Contact";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import CustomBuilds from "./pages/CustomBuilds";
 import WhatsAppProvider from "./context/WhatsAppContext";
+import ScrollRestoration from "./components/ScrollRestoration";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
     <BrowserRouter>
       <WhatsAppProvider>
         <TooltipProvider>
+          <ScrollRestoration />
           <Toaster />
           <Sonner />
           <Routes>

@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
           {/* About */}
           <div>
             <Link to="/" className="flex items-center mb-4">
-              <h1 className="text-2xl font-bold text-white mr-1">MUSTANG</h1>
+              <h1 className="text-2xl font-bold text-white mr-1">SOUANI</h1>
               <span className="text-mustang-red text-2xl font-bold">GAMING</span>
             </Link>
             <p className="text-gray-400 mb-6">
@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={20} className="text-mustang-red mr-3 flex-shrink-0" />
-                <span className="text-gray-400">info@mustanggaming.ma</span>
+                <span className="text-gray-400">info@souanigaming.ma</span>
               </li>
             </ul>
           </div>
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
-              © 2025 Mustang Gaming. All rights reserved.
+              © 2025 Souani Gaming. All rights reserved.
             </p>
             <div className="flex items-center space-x-4">
               <span className="text-gray-400 text-sm">Payment Methods:</span>
